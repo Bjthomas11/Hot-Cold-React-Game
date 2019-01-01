@@ -4,7 +4,6 @@ import "./guess-form.css";
 export default class GuessForm extends Component {
   onSubmit(e) {
     e.preventDefault();
-
     if (this.props.onMakeGuess) {
       const value = this.input.value;
       this.props.onMakeGuess(value);
@@ -12,6 +11,7 @@ export default class GuessForm extends Component {
     this.input.value = "";
     this.input.focus();
   }
+
   render() {
     return (
       <form onSubmit={e => this.onSubmit(e)}>
@@ -22,8 +22,9 @@ export default class GuessForm extends Component {
           className="text"
           min="1"
           max="100"
+          autoComplete="off"
           aria-labelledby="feedback"
-          red={input => (this.input = input)}
+          ref={input => (this.input = input)}
           required
         />
         <button type="submit" name="submit" id="guessButton" className="button">

@@ -6,7 +6,7 @@ export default function Feedback(props) {
 
   let guessAgain;
 
-  if (key != 0) {
+  if (key !== 0) {
     guessAgain = <span className="visuallyhidden">Try Again!</span>;
   }
   return (
