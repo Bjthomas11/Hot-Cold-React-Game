@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./guess-form.css";
 
-export default class GuessForm extends Component {
+export default class UserGuessForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     if (this.props.onMakeGuess) {

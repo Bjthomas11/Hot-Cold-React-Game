@@ -9,7 +9,7 @@ export default class MainGame extends Component {
     super(props);
     this.state = {
       guesses: [],
-      feedback: "Go Ahead an Guess",
+      uiFeedback: "Go Ahead an Guess",
       auralStatus: "",
       correctAnswer: Math.floor(Math.random() * 100) + 1
     };
@@ -18,7 +18,7 @@ export default class MainGame extends Component {
   restartGame() {
     this.setState({
       guesses: [],
-      feedback: "Go Ahead an Guess",
+      uiFeedback: "Go Ahead an Guess",
       auralStatus: "",
       correctAnswer: Math.floor(Math.random() * 100) + 1
     });
@@ -28,39 +28,39 @@ export default class MainGame extends Component {
     guess = parseInt(guess, 10);
     if (isNaN(guess)) {
       this.setState({
-        feedback: "Enter a number"
+        uiFeedback: "Enter a number"
       });
       return;
     }
 
     const difference = Math.abs(guess - this.state.correctAnswer);
 
-    let feedback;
+    let uiFeedback;
     if (difference >= 50) {
-      feedback = "Very Cold";
+      uiFeedback = "Very Cold";
     } else if (difference >= 30) {
-      feedback = "You are Cold";
+      uiFeedback = "You are Cold";
     } else if (difference >= 10) {
-      feedback = "Getting Warm";
+      uiFeedback = "Getting Warm";
     } else if (difference >= 1) {
-      feedback = "You are Really Hot!";
+      uiFeedback = "You are Really Hot!";
     } else {
-      feedback = "Yay you got it!";
+      uiFeedback = "Yay you got it!";
     }
 
     this.setState({
-      feedback,
+      uiFeedback,
       guesses: [...this.state.guesses, guess]
     });
 
-    document.title = feedback ? `${feedback} | Hot or Cold` : "Hot or Cold";
+    document.title = uiFeedback ? `${uiFeedback} | Hot or Cold` : "Hot or Cold";
   }
   generateAuralUpdate() {
-    const { guesses, feedback } = this.state;
+    const { guesses, uiFeedback } = this.state;
 
     const pluralize = guesses.length !== 1;
 
-    let auralStatus = `Here's the status of the game right now: ${feedback} You've made ${
+    let auralStatus = `Here's the status of the game right now: ${uiFeedback} You've made ${
       guesses.length
     } ${pluralize ? "userGuesses" : "guess"}`;
 
@@ -75,8 +75,8 @@ export default class MainGame extends Component {
     });
   }
   render() {
-    const { feedback, guesses, auralStatus } = this.state;
-    const guessCount = guesses.length;
+    const { uiFeedback, guesses, auralStatus } = this.state;
+    const UserGuessCount = guesses.length;
 
     return (
       <div>
@@ -86,8 +86,8 @@ export default class MainGame extends Component {
         />
         <main role="main">
           <UserGuessSection
-            feedback={feedback}
-            guessCount={guessCount}
+            uiFeedback={uiFeedback}
+            UserGuessCount={UserGuessCount}
             onMakeGuess={guess => this.makeGuess(guess)}
           />
           <StatusAside guesses={guesses} auralStatus={auralStatus} />
