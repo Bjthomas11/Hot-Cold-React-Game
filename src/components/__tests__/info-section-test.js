@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow, mount } from "enzyme";
-import Game from "../game";
+import InfoSection from "../info-section";
 
-describe("<Game />", () => {
+describe("<InfoSection />", () => {
   it("Renders without breaking", () => {
-    shallow(<Game />);
+    shallow(<InfoSection />);
   });
 });
