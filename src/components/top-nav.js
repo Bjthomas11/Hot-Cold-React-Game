@@ -1,12 +1,13 @@
 import React from "react";
-import "./main-nav.css";
+
+import "./top-nav.css";
 
 export default function TopNav(props) {
   return (
     <nav>
       <ul className="clearfix">
         <li>
-          <a href="#what" className="what" aria-label="Game Instructions">
+          <a href="#what" className="what" aria-label="How to play">
             How To Play?
           </a>
         </li>
@@ -23,10 +24,12 @@ export default function TopNav(props) {
         <li>
           <a
             href="#get-status"
+            /* the `visuallyhidden` class hides an element 
+            while leaving it available to screen reader users  */
             className="visuallyhidden focusable status-link"
             onClick={() => props.onGenerateAuralUpdate()}
           >
-            Hear the current state of the game
+            Hear state of game
           </a>
         </li>
       </ul>
