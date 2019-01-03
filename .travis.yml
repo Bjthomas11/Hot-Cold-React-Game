@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: brERjqHBehij8DMTPedGDhAEhFd6cQMAGL8eHdNxM+msVIYMFe+9Rfcoop2IJK5wt4ZKcf2ZP6GDhr1PxjsT8M6IvvR3Qh/KLZBDWEHAi0QLoOpg8ao7Cilz7SjV/ORwiCrPNUbsVusYr7NBp+4nLwuKOu76Vtqgc0znYkSjYEMGwmc7MbgNvl+k4WatualIAMNGN5Z35tAc/pPnV38i6/Sb5Afgn/5obPPJ1tuxI+w6Wpe/OOnsP/U5cekur7tEtSWocfzcHaA30bYJpWjdUah5txuQcVuFspAOoPcHwSJ/Nt7BlEyrJJ162GEF3kb4vindN48FWG4Q1KbiQcIxIFe6QS/4pb3OCndomHQV8i1zAqO7gea4mnV3VLjQWWkX8SjAyl5sSaQmr/GlNNX4YGsoxEUkioMObl2q5dymZcQdcVZZvYhZD3U0Q19UBdYdghBS351sIVy74G9PZ/OWAD7tDuiJ2ybIBScluUGdlAJN4rqIiEhPxqSDfeeSi9X2UfUOAG6ESpQSIflrf7nSOzK7Z5qHnwuC1ju8pXP3OPkgNK496o44635NB4JGp1ID5YcbceyFgF7WQIQA8eTxLZSgNY0SWEReS/RnxxA6dTD6MNYVEUJxGqN6zNfEtPkR3Xc0aDlJIqB4fVJ/T768HC6+J6SVLObf3vlkBusUe50=
+  app: gentle-mountain-15742
+  on:
+    repo: Bjthomas11/Hot-Cold-React-Game
