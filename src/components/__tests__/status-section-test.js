@@ -4,6 +4,6 @@ import StatusSection from "../status-section";
 
 describe("<StatusSection />", () => {
   it("Renders without breaking", () => {
-    shallow(<StatusSection />);
+    shallow(<StatusSection guesses={[]} />);
   });
 });
