@@ -17,15 +17,14 @@ export function Feedback(props) {
       aria-live="assertive"
       aria-atomic="true"
     >
-      {props.feedback}
-      {guessAgain}
+      {props.feedback} {guessAgain}
     </h2>
   );
 }
 
 const mapStateToProps = state => ({
-  feedback: state.feedback,
-  guessCount: state.guesses.length
+  guessCount: state.guesses.length,
+  feedback: state.feedback
 });
 
 export default connect(mapStateToProps)(Feedback);

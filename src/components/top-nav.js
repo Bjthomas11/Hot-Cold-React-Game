@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { auralUpdate, restartNewGame } from "../actions";
-import "./top-nav.css";
+import { generateAuralUpdate, restartGame } from "../actions";
 
 export function TopNav(props) {
   return (
@@ -18,9 +17,7 @@ export function TopNav(props) {
             className="new"
             aria-label="Start a new game"
             onClick={() =>
-              props.dispatch(
-                restartNewGame(Math.floor(Math.random() * 100) + 1)
-              )
+              props.dispatch(restartGame(Math.floor(Math.random() * 100) + 1))
             }
           >
             New Game +
@@ -30,7 +27,7 @@ export function TopNav(props) {
           <a
             href="#get-status"
             className="visuallyhidden focusable status-link"
-            onClick={() => props.dispatch(auralUpdate())}
+            onClick={() => props.dispatch(generateAuralUpdate())}
           >
             Hear state of game
           </a>

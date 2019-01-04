@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userMakesGuess } from "../actions";
+import { makeGuess } from "../actions";
 import "./guess-form.css";
 
 export class GuessForm extends Component {
@@ -8,7 +8,7 @@ export class GuessForm extends Component {
     event.preventDefault();
 
     const value = this.input.value;
-    this.props.dispatch(userMakesGuess(value));
+    this.props.dispatch(makeGuess(value));
     this.input.value = "";
     this.input.focus();
   }
