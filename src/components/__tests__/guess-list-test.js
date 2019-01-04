@@ -6,4 +6,14 @@ describe("<GuessList />", () => {
   it("Renders without breaking", () => {
     shallow(<GuessList guesses={[]} />);
   });
+
+  it("Renders a list of guesses", () => {
+    const values = [23, 54, 67, 87];
+    const wrapper = shallow(<GuessList guesses={values} />);
+    const items = wrapper.find("li");
+    expect(items.length).toEqual(values.length);
+    values.forEach((value, index) => {
+      expect(items.at(index).text()).toEqual(value.toString());
+    });
+  });
 });
