@@ -6,12 +6,6 @@
 
 [Live demo (Heroku)](https://gentle-mountain-15742.herokuapp.com/)
 
-### Landing Page
-
-![LandingPage](src/img/landingPage.png)
-
-### screenshot
-
 ![screenshot](snapshot.png)
 
 ## Tech Stack Used
